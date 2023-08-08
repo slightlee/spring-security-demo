@@ -6,5 +6,8 @@
 </head>
 <body>
 登录成功页面
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="退出登录"/>
+</form>
 </body>
 </html>

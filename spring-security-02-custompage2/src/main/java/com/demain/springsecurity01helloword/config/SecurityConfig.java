@@ -30,8 +30,13 @@ public class SecurityConfig {
                         .failureUrl("/errorPage") // 登录失败页面
                         .permitAll()
                 )
-        // 使用默认配置
-        // .formLogin(Customizer.withDefaults());
+                .logout(logout -> logout
+                        .deleteCookies("JSESSIONID")
+                        // 使 HTTP 会话无效
+                        .invalidateHttpSession(true)
+                        // 退出成功后跳转的页面
+                        .logoutSuccessUrl("/index")
+                )
         ;
         return http.build();
     }

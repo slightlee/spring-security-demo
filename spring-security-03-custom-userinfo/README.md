@@ -45,5 +45,19 @@ public class UserDetailsServiceAutoConfiguration {
     }
 ```
 
+通过源码可以看到 InMemoryUserDetailsManager implements UserDetailsManager, UserDetailsManager extends `UserDetailsService`
+
+或者使用 
+
+```java
+    @Bean
+    public InMemoryUserDetailsManager inMemoryUserDetailsManager() {
+        return new InMemoryUserDetailsManager(User.withUsername("user")
+                .password("123456")
+                .roles("USER")
+                .build());
+    }
+```
+
 
 

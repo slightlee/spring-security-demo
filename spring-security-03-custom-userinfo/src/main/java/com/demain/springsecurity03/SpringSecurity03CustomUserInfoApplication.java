@@ -1,4 +1,4 @@
-package com.demain.springsecurity01helloword;
+package com.demain.springsecurity03;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
